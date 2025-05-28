@@ -2,49 +2,117 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="web-logo.png" type="image/x-icon">
     <title>Block-Soft</title>
+    <!-- 引入 Google Fonts -->
+    <link id="googleFonts" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 全局样式 */
         body {
             margin: 0;
+            font-family: Arial, sans-serif; /* 默认字体 */
+            background-color: #f9f9f9a2;
+            color: #333;
+        }
+
+        /* 顶部欢迎部分 */
+        .header {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .header h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .header h4 {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #666;
+        }
+
+        /* 内容部分 */
+        .content {
+            max-width: 800px;
+            margin: 32px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* 底部链接部分 */
+        .footer {
+            background-color: #b4fdfd;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #333;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            color: #007acc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div style="
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 30px;
-        ">
-            <img src="web-home-logo.png" alt="Block-Soft">
-        <h2 style="
-            text-align: center;
-            margin: auto;
-        ">欢迎访问BLOCK-SOFT官方网站!</h2>
-        <h4 style="
-            text-align: center;
-            margin: auto;
-        ">Welcome To BLOCK-SOFT Official WebSite!</h4>
-        </div>
-        <div style="
-            max-width: 800px;
-            margin: 32px auto;
-            padding: 15px;
-            line-height: 1.7;
-            color: gray;
-        ">
-            <p>Hello.</p>
-        </div>
-        <div style="
-            background-color: #b4fdfd;
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-        ">
-            <a href="https://space.bilibili.com/3494362073794678">作者BiliBili主页</a>
-        </div>
+    <div class="header">
+        <img src="web-home-logo.png" alt="Block-Soft">
+        <h2>欢迎访问BLOCK-SOFT官方网站!</h2>
+        <h4>Welcome To BLOCK-SOFT Official WebSite!</h4>
     </div>
+    <div class="content">
+        <p>Hello.</p>
+    </div>
+    <div class="footer">
+        <a href="https://space.bilibili.com/3494362073794678">作者BiliBili主页</a>
+    </div>
+    <script>
+        // 检测 Google Fonts 是否加载成功
+        const fontTest = document.createElement('span');
+        fontTest.style.fontFamily = '"Roboto", "Noto Sans SC", Arial, sans-serif';
+        fontTest.style.visibility = 'hidden';
+        fontTest.style.position = 'absolute';
+        fontTest.innerText = 'Test';
+        document.body.appendChild(fontTest);
+
+        const initialWidth = fontTest.offsetWidth;
+
+        setTimeout(() => {
+            if (fontTest.offsetWidth === initialWidth) {
+                // 如果字体未加载成功，移除 Google Fonts
+                const googleFontsLink = document.getElementById('googleFonts');
+                if (googleFontsLink) {
+                    googleFontsLink.parentNode.removeChild(googleFontsLink);
+                }
+                document.body.style.fontFamily = 'Arial, sans-serif'; // 回退到默认字体
+            }
+            document.body.removeChild(fontTest); // 清理测试元素
+        }, 2500); // 2.5秒超时
+    </script>
 </body>
 </html>
