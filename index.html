@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="web-logo.png" type="image/x-icon">
     <title>BLOCK-SOFT</title>
-    <!-- 引入 Google Fonts -->
-    <link id="googleFonts" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* 全局样式 */
         body {
             margin: 0;
-            font-family: Arial, sans-serif; /* 默认字体 */
+            font-family: Arial, sans-serif;
             background-color: #f9f9f9a2;
             color: #333;
         }
@@ -80,39 +78,16 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <img src="web-home-logo.png" alt="Block-Soft">
         <h2>欢迎访问BLOCK-SOFT官方网站!</h2>
         <h4>Welcome To BLOCK-SOFT Official WebSite!</h4>
-    </div>
-    <div class="content">
+    </header>
+    <main class="content">
         <p>Hello.</p>
-    </div>
-    <div class="footer">
+    </main>
+    <footer class="footer">
         <a href="https://space.bilibili.com/3494362073794678">作者BiliBili主页</a>
-    </div>
-    <script>
-        // 检测 Google Fonts 是否加载成功
-        const fontTest = document.createElement('span');
-        fontTest.style.fontFamily = '"Roboto", "Noto Sans SC", Arial, sans-serif';
-        fontTest.style.visibility = 'hidden';
-        fontTest.style.position = 'absolute';
-        fontTest.innerText = 'Test';
-        document.body.appendChild(fontTest);
-
-        const initialWidth = fontTest.offsetWidth;
-
-        setTimeout(() => {
-            if (fontTest.offsetWidth === initialWidth) {
-                // 如果字体未加载成功，移除 Google Fonts
-                const googleFontsLink = document.getElementById('googleFonts');
-                if (googleFontsLink) {
-                    googleFontsLink.parentNode.removeChild(googleFontsLink);
-                }
-                document.body.style.fontFamily = 'Arial, sans-serif'; // 回退到默认字体
-            }
-            document.body.removeChild(fontTest); // 清理测试元素
-        }, 2500); // 2.5秒超时
-    </script>
+    </footer>
 </body>
 </html>
